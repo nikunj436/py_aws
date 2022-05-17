@@ -30,7 +30,7 @@ def data_show():
     for i in L:
         temp = i['First']+ " " + i['Last'] 
         ans.append(temp)
-        ans.reverse()        
+        #ans.reverse()        
     
     return render_template("data_show.html", ans=ans) #ans=ans printing in sep lines 
 
