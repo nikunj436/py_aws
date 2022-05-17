@@ -3,17 +3,17 @@
     <title>Home - Devops Demo</title>
 </head>
 <body>
-    <h1>Enter your Details </h1>
+    <h2>Enter your Details </h2>
     
 
     <form action="../data_entry.py/", method="POST">
-
-    <input type="text" name="first_name" value="" required> 
-    <input type="text" name="last_name" value="" required> 
+    <label> First Name:</label>
+    <input type="text" name="first_name" required>
+    <label> Last Name:</label>
+    <input type="text" name="last_name"  required>
     <input type="submit" value="Submit">
     </form>
     {% block submit %} {% endblock %}
-    <br/>
     <br/>
     
     <h2> Please Click below button for see all entries </h2>
