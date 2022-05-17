@@ -26,10 +26,13 @@ def data_entry():
 @app.route("/data_show.py") 
 def data_show():
     L = db.namecollection.find({})  #selecting all entries
-
+    ans = []
     for i in L:
-        print(i)
-    return render_template("data_show.html", L=i)
+        temp = i['First']+ " " + i['Last'] 
+        ans.append(temp)
+        ans.reverse()        
+    
+    return render_template("data_show.html", ans=ans) #ans=ans printing in sep lines 
 
 if __name__ == '__main__':
     app.run(host="localhost",port=5656, debug=True) 

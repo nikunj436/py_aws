@@ -1,4 +1,22 @@
-class Main:
+from pymongo import MongoClient
+
+# define the mongodb client
+client = MongoClient(port=27017)
+
+# define the database to use
+db = client.devopsdb
+L = db.namecollection.find({})
+ans = []
+for i in L:
+    temp = i['First']+ " " + i['Last'] 
+    ans.append(temp)
+
+for i in ans:
+    print(i)
+
+
+
+'''class Main:
     def __init__(self, name, age):
         self.name = name
         self.age = int(age)
@@ -31,3 +49,4 @@ print("\nfrom sub_main function \n")
 s1 = sub_main("Nikunj Rabadiya", 23, 100)
 s1.Basic_details()
 s1.all_details()
+'''
