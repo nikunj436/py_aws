@@ -1,13 +1,15 @@
 from flask import Flask, request, render_template
 from pymongo import MongoClient
-app = Flask(__name__)
+app = Flask(__name__, template_folder="Templates") #Templates folder added here #issue in container alpine unable to find "index.html"
 
 @app.route("/")
 def index():
     return render_template("index.html")
 
-# define the mongodb client
+# define the mongodb client 
+#pymongo.MongoClient('mongodb://user:password@server:port/')
 client = MongoClient(port=27017)
+#conn = MongoClient('mongodb://root:pass@localhost:27017/')
 
 # define the database to use
 db = client.devopsdb
@@ -35,5 +37,5 @@ def data_show():
     return render_template("data_show.html", ans=ans) #ans=ans printing in sep lines 
 
 if __name__ == '__main__':
-    app.run(host="localhost",port=5656, debug=True) 
+    app.run(host="0.0.0.0",port=5656, debug=True)  #host changes localhost to '0.0.0.0'
 
