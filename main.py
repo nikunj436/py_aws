@@ -7,9 +7,8 @@ def index():
     return render_template("index.html")
 
 # define the mongodb client 
-#pymongo.MongoClient('mongodb://user:password@server:port/')
-client = MongoClient(port=27017)
-#conn = MongoClient('mongodb://root:pass@localhost:27017/')
+client = MongoClient(host='test_mongodb',port=27017)  #host name added, same mention in docker-compose
+#client = MongoClient('mongodb://root:pass@localhost:27017/') #if password used 
 
 # define the database to use
 db = client.devopsdb
