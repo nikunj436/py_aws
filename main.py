@@ -36,5 +36,5 @@ def data_show():
     return render_template("data_show.html", ans=ans) #ans=ans printing in sep lines 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0",port=5656, debug=True)  #host changes localhost to '0.0.0.0'
+    app.run(host="0.0.0.0",port=5000, debug=True)  #host changes localhost to '0.0.0.0'
 

@@ -4,7 +4,8 @@ services:
     build: .   #building like docker build .
     image: flask_web #image_name
     ports:
-      - 5656:5656
+      #- 5656:5656
+      - 5000:5000
     environment:
       - MONGO_HOST=mongo  #space not allowed here like Mongo_host = mongo
       - MONGO_PORT=27017

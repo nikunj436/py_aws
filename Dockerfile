@@ -11,7 +11,7 @@ RUN pip install -r python_req.txt
 # can also added for  no cache in dir  
 
 #I used 5656 that's why otherwise flask default port 5000 then need to expose the same port 
-EXPOSE 5656
+EXPOSE 5000 
 
 #if not executable than have to use ENTERYPOINT LIKE
 #ENTRYPOINT [ "python" ]
