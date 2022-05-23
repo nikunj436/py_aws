@@ -1,13 +1,20 @@
 from flask import Flask, request, render_template
 from pymongo import MongoClient
-app = Flask(__name__, template_folder="Templates") #Templates folder added here #issue in container alpine unable to find "index.html"
+#import socket
+
+app = Flask(__name__, template_folder="Templates") #template_folder added here #issue in container alpine unable to find "index.html"
+
+#host = socket.gethostbyname('mongo')
+#URI=host+":"+"27017"
 
 @app.route("/")
 def index():
     return render_template("index.html")
 
 # define the mongodb client 
-client = MongoClient(host='test_mongodb',port=27017)  #host name added, same mention in docker-compose
+client = MongoClient('mongodb://mongo:27017') #EKS
+#client = MongoClient('localhost', port=27017)
+#client = MongoClient(host='test_mongodb',port=27017) #host name added, same mention in docker-compose
 #client = MongoClient('mongodb://root:pass@localhost:27017/') #if password used 
 
 # define the database to use

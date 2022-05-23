@@ -6,6 +6,7 @@ spec:
   selector:
     app: webapp
   ports:
-    - port: 8080 #service port
-      targetPort: 5000 #where it should go (in this case container port )
+    - port: 80 
+      targetPort: 5000 
+      protocol: TCP
   type: LoadBalancer 
