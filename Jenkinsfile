@@ -14,7 +14,7 @@ pipeline {
                              sh 'docker login -u rabadiyanikunj436 -p $PASSWORD'
                      }
                 sh 'pwd'
-                sh 'cp py_aws/* .'
+                sh 'cp -rf py_aws/* .'
                 sh 'docker build -t rabadiyanikunj436/py_aws:v1 .'    
                 sh 'docker push rabadiyanikunj436/py_aws:v1 '
                 sh 'docker rmi rabadiyanikunj436/py_aws:v1'
