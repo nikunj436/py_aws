@@ -38,4 +38,5 @@ post{
     always{
         deletdir()
     }
+    }
 }
