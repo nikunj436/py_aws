@@ -36,7 +36,7 @@ pipeline {
 
 post{
     always{
-        deletdir()
+        deletdir(py_aws)
     }
     }
 }
