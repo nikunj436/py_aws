@@ -8,7 +8,7 @@ pipeline {
              when { expression { MY_FILE == 'true' } }
             steps {
                 echo MY_FILE
-                sh 'rmdir py_aws'
+                sh 'rmdir -rf py_aws'
             }
         }
         stage("clone"){
