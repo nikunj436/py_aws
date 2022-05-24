@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage("clone"){
             steps{
-                sh ' rmdir py_aws'
+                //sh 'rmdir py_aws'
                 sh 'git clone https://github.com/nikunj436/py_aws'
             }
         }
