@@ -7,6 +7,7 @@ pipeline {
         stage("Empty if Exist"){
              when { expression { MY_FILE == 'true' } }
             steps {
+                echo MY_FILE
                 sh 'rmdir py_aws'
             }
         }
