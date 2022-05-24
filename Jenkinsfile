@@ -7,7 +7,7 @@ pipeline {
             }
         }
 
-        stage("Docker Build $ Push & Remove image local repo"){
+        stage("Docker Build & Push & Remove image local repo"){
             steps{
                 withCredentials([string(credentialsId: 'DOCKER_HUB_PASSWORD', variable: 'PASSWORD')]) {
                              sh 'docker login -u rabadiyanikunj436 -p $PASSWORD'
