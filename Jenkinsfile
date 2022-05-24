@@ -36,7 +36,8 @@ pipeline {
 
 post{
     always{
-        deletdir(py_aws)
+        deletdir()
+        cleanWs()
     }
     }
 }
