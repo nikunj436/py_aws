@@ -7,20 +7,21 @@ pipeline {
             }
         }
 
-        stage("Docker Build $ Push"){
+        stage("Docker Build $ Push & Remove image local repo"){
             steps{
                 withCredentials([string(credentialsId: 'DOCKER_HUB_PASSWORD', variable: 'PASSWORD')]) {
                              sh 'docker login -u rabadiyanikunj436 -p $PASSWORD'
                      }
                 sh 'docker build -t rabadiyanikunj436/py_aws:v1 .'    
                 sh 'docker push rabadiyanikunj436/py_aws:v1 '
-            }
-        
-        stage("Deployment")
+                sh 'docker rmi rabadiyanikunj436/py_aws:v1'
+                }
+        }
+        stage("Deployment"){
             steps{
                 sh 'kubectl apply -f k8s'
+                }
             }
-            }
-        }
+        
     }
 }
