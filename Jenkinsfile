@@ -13,6 +13,7 @@ pipeline {
                 withCredentials([string(credentialsId: 'DOCKER_HUB_PASSWORD', variable: 'PASSWORD')]) {
                              sh 'docker login -u rabadiyanikunj436 -p $PASSWORD'
                      }
+                sh 'pwd'
                 sh 'docker build -t rabadiyanikunj436/py_aws:v1 .'    
                 sh 'docker push rabadiyanikunj436/py_aws:v1 '
                 sh 'docker rmi rabadiyanikunj436/py_aws:v1'
