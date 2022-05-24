@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    stage{
+    stages{
         stage("clone"){
             steps{
                 sh 'git clone https://github.com/nikunj436/py_aws'
