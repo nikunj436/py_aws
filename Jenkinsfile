@@ -23,7 +23,7 @@ pipeline {
         stage("Deployment"){
             steps{
                 sh '/var/lib/jenkins/bin/kubectl apply -f k8s'
-                sh '/var/lib/jenkins/bin/kubectl rollout restart deployment webapp'
+                //sh '/var/lib/jenkins/bin/kubectl rollout restart deployment webapp'
                 //sh '/var/lib/jenkins/bin/kubectl delete -f k8s/webapp.yaml'
                 //sh '/var/lib/jenkins/bin/kubectl create -f k8s/webapp.yaml'
                 }
