@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: webapp
-          image: rabadiyanikunj436/py_aws:v1
+          image: rabadiyanikunj436/py_aws
           ports:
             - containerPort: 5000
           imagePullPolicy: Always 

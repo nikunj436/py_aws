@@ -15,9 +15,9 @@ pipeline {
                      }
                 sh 'pwd'
                 sh 'cp -rf py_aws/* .'
-                sh 'docker build -t rabadiyanikunj436/py_aws:v1 .'    
-                sh 'docker push rabadiyanikunj436/py_aws:v1 '
-                sh 'docker rmi rabadiyanikunj436/py_aws:v1'
+                sh 'docker build -t rabadiyanikunj436/py_aws .'    
+                sh 'docker push rabadiyanikunj436/py_aws '
+                sh 'docker rmi rabadiyanikunj436/py_aws'
                 }
         }
         stage("Deployment"){
