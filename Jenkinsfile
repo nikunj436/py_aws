@@ -1,16 +1,6 @@
 pipeline {
     agent any
-    environment{
-        MY_FILE = fileExists 'py_aws'
-    }
-    stages{
-        stage("Empty if Exist"){
-             when { expression { MY_FILE == 'true' } }
-            steps {
-                echo MY_FILE
-                sh 'rm -rf *'
-            }
-        }
+    
         stage("clone"){
             steps{
                 sh 'git clone https://github.com/nikunj436/py_aws'
