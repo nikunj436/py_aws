@@ -26,11 +26,3 @@ pipeline {
                 }
             }  
             }
-
-post{
-    always{
-        deletdir()
-        cleanWs()
-    }
-    }
-}
