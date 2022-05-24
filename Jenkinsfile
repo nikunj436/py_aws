@@ -19,11 +19,18 @@ pipeline {
                 sh 'docker push rabadiyanikunj436/py_aws '
                 sh 'docker rmi rabadiyanikunj436/py_aws'
                 }
-        }
+            }   
         stage("Deployment"){
             steps{
                 sh '/var/lib/jenkins/bin/kubectl apply -f k8s'
+                sh 'kubectl delete -f k8s/webapp.yaml'
+                sh 'kubectl create -f k8s/webapp.yaml'
                 }
             }  
-            }
+        }
+    post { 
+        always { 
+            echo 'Just using post for sack of completion'
+        }
+    }
 }
