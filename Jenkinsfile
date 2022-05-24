@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage("clone"){
             steps{
-                sh ' rm -rf .git'
+                sh ' rmdir py_aws'
                 sh 'git clone https://github.com/nikunj436/py_aws'
             }
         }
@@ -20,7 +20,7 @@ pipeline {
         }
         stage("Deployment"){
             steps{
-                sh 'kubectl apply -f k8s'
+                sh '/var/lib/jenkins/bin/kubectl apply -f k8s'
                 }
             }
         
