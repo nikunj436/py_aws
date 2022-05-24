@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage("clone"){
             steps{
-                if fileExists('py_aws'){
+                if folderExists('py_aws'){
                     sh 'rmdir py_aws'
                 }
                 
