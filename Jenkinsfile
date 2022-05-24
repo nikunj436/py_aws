@@ -3,7 +3,7 @@ pipeline {
     //environment{
     //    MY_FILE = fileExists 'py_aws'
     //}
-    //stages{
+    stages{
       //  stage("Empty if Exist"){
         //     when { expression { MY_FILE == 'true' } }
           //  steps {
@@ -31,9 +31,8 @@ pipeline {
             steps{
                 sh '/var/lib/jenkins/bin/kubectl apply -f k8s'
                 }
+            }  
             }
-        
-    }
 
 post{
     always{
