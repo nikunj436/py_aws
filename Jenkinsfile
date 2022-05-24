@@ -1,12 +1,17 @@
 pipeline {
     agent any
+    environment{
+        MY_FILE = fileExists 'py_aws'
+    }
     stages{
+        stage("Empty if Exist"){
+             when { expression { MY_FILE == 'true' } }
+            steps {
+                sh 'rmdir py_aws'
+            }
+        }
         stage("clone"){
             steps{
-                if folderExists('py_aws'){
-                    sh 'rmdir py_aws'
-                }
-                
                 sh 'git clone https://github.com/nikunj436/py_aws'
             }
         }
